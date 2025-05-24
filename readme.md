@@ -33,6 +33,7 @@ Producers send audio chunks → Kafka stores and manages them → Consumers rece
 Inside Kafka container or via command line tools:
 
 ```bash
+docker exec -it audio-streaming-kafka-1 /bin/bash
 kafka-topics --bootstrap-server localhost:9092 --list
 ```
 
@@ -63,7 +64,8 @@ python consumer.py
 You should see the consumer printing logs about receiving audio messages, possibly saving files or playing audio.
 
 In Consumer, you can see: 
-
+```bash
 🔄 Waiting for audio messages...
 🔊 Playing received audio...
 🔊 Playing received audio...
+```
